@@ -36,14 +36,7 @@
         "symfony/polyfill-php70": "*",
         "symfony/polyfill-php56": "*"
     },
-    "conflict": {
-        "symfony/symfony": "*"
-    },
     "extra": {
-        "symfony": {
-            "allow-contrib": false,
-            "require": "4.3.*"
-        },
         "branch-alias": {
             "dev-master": "1.0-dev"
         }
