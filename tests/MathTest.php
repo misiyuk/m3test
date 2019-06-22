@@ -2,13 +2,15 @@
 
 namespace Misiyuk\Bundle\MathBundle\Tests;
 
-use Misiyuk\Bundle\MathBundle\Math\Calculator\CalculatorInterface;
 use Misiyuk\Bundle\MathBundle\Math\Exceptions\ValidationException;
 use Misiyuk\Bundle\MathBundle\Math\Math;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class MathTest extends WebTestCase
 {
+    /**
+     * @var Math
+     */
     private $math;
 
     public function __construct()
@@ -16,9 +18,7 @@ class MathTest extends WebTestCase
         parent::__construct();
         self::bootKernel();
         $container = self::$container;
-        /** @var CalculatorInterface $calculator */
-        $calculator = $container->get('calculator');
-        $this->math = new Math($calculator);
+        $this->math = $container->get(Math::class);
     }
 
     public function testCalculator()

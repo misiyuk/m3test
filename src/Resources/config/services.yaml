@@ -1,6 +1,9 @@
 services:
-    calculator:
-        public: true
-        class: Misiyuk\Bundle\MathBundle\Math\Calculator\Calculator
+    _defaults:
+        autowire: true
+        autoconfigure: true
     Misiyuk\Bundle\MathBundle\Math\Calculator\CalculatorInterface:
-        alias: calculator
+        alias: Misiyuk\Bundle\MathBundle\Math\Calculator\Calculator
+    Misiyuk\Bundle\MathBundle\Math\:
+        resource: '../../Math/*'
+        public: true
